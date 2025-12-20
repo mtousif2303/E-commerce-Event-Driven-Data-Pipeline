@@ -2,19 +2,15 @@
 
 Project Overview
 
-This project implements a production-grade, event-driven data pipeline for an e-commerce platform using Databricks and Delta Lake. The pipeline processes data from multiple business domains, ensures high data quality, maintains historical changes, and delivers analytics-ready datasets for business intelligence.
+This project implements a production-grade, event-driven data pipeline for an e-commerce platform using Databricks and Delta Lake. The pipeline processes data from multiple business domains, ensures high data quality, maintains historical changes, and delivers analytics-ready datasets for business intelligence.an **industrial-grade, event-driven data pipeline** for an e-commerce platform. It is designed to ingest, validate, enrich, and analyze data from multiple business domains using modern **lakehouse architecture** principles.
+
+The pipeline is **scalable, fault-tolerant, and production-ready**, leveraging Databricks-native services for orchestration, storage, and analytics.
 
 The solution follows modern data engineering best practices, including schema enforcement, data validation, SCD Type 2 handling, automated orchestration, and monitoring.
 <img width="3058" height="1630" alt="image" src="https://github.com/user-attachments/assets/36ef7464-28e1-4b71-8d06-80e9cc2fdd91" />
 
 
 # E-commerce Event-Driven Data Pipeline
-
-## 📌 Project Overview
-This project demonstrates an **industrial-grade, event-driven data pipeline** for an e-commerce platform. It is designed to ingest, validate, enrich, and analyze data from multiple business domains using modern **lakehouse architecture** principles.
-
-The pipeline is **scalable, fault-tolerant, and production-ready**, leveraging Databricks-native services for orchestration, storage, and analytics.
-
 ---
 
 ## 🛠️ Tech Stack
