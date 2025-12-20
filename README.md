@@ -8,128 +8,103 @@ The solution follows modern data engineering best practices, including schema en
 <img width="3058" height="1630" alt="image" src="https://github.com/user-attachments/assets/36ef7464-28e1-4b71-8d06-80e9cc2fdd91" />
 
 
-🛠 Tech Stack
+# E-commerce Event-Driven Data Pipeline
 
-Databricks
+## 📌 Project Overview
+This project demonstrates an **industrial-grade, event-driven data pipeline** for an e-commerce platform. It is designed to ingest, validate, enrich, and analyze data from multiple business domains using modern **lakehouse architecture** principles.
 
-PySpark
+The pipeline is **scalable, fault-tolerant, and production-ready**, leveraging Databricks-native services for orchestration, storage, and analytics.
 
-Delta Lake
+---
 
-Databricks Volumes
+## 🛠️ Tech Stack
+- Databricks  
+- PySpark  
+- Delta Lake  
+- Databricks Volumes  
+- Databricks Workflows  
+- GitHub  
 
-Databricks Workflows
+---
 
-GitHub
+## 🔄 Key Features & Architecture
 
-🧩 Architecture Highlights
+### 1️⃣ Multi-Source Data Ingestion Pipeline
+- Ingests data from multiple domains:
+  - Orders  
+  - Customers  
+  - Products  
+  - Inventory  
+  - Shipping  
+- Source data loaded from **Databricks Volumes**
+- Automated file-based ingestion with schema validation
+- Supports batch and incremental processing
 
-Event-driven ingestion using trigger files
+---
 
-Medallion architecture (Bronze → Silver → Gold)
+### 2️⃣ Advanced Data Validation & Quality Assurance
+- Cross-table validation across staging datasets
+- Business rule validation:
+  - Null checks  
+  - Referential integrity  
+  - Value range validation  
+- Data quality scoring with severity levels:
+  - Critical  
+  - Warning  
+  - Informational  
+- Centralized error logging and validation metrics
 
-Delta Lake ACID transactions and schema enforcement
+---
 
-Modular, reusable notebook design
+### 3️⃣ Data Enrichment & Business Intelligence
+- Customer segmentation based on purchase behavior
+- Product performance analysis
+- Seasonal trend analysis
+- Customer Lifetime Value (CLV) calculation
+- Analytics-ready enriched datasets
 
-🚀 Key Features
-🔹 Multi-Source Data Ingestion
+---
 
-Ingests data from multiple domains:
+### 4️⃣ SCD Type 2 Implementation
+- Implements **Slowly Changing Dimension (SCD) Type 2**
+- Maintains full historical tracking using:
+  - Effective start date  
+  - Expiry date  
+  - Active record flag  
+- Automated `MERGE` operations using Delta Lake
 
-Orders
+---
 
-Customers
+### 5️⃣ Automated File Management
+- Source file archiving after successful processing
+- Batch tracking using unique batch IDs
+- Error file segregation for failed records
+- End-to-end processing status monitoring
 
-Products
+---
 
-Inventory
+### 6️⃣ Analytics & Reporting Layer
+- Real-time analytics summary tables
+- Customer segment insights
+- Product performance KPIs
+- Business metrics ready for BI consumption
 
-Shipping
+---
 
-Automated file-based ingestion from Databricks Volumes
+### 7️⃣ Event-Driven Workflow Orchestration
+- Pipeline triggered using **JSON control files**
+- Sequential notebook execution via **Databricks Workflows**
+- Centralized monitoring and execution logs
+- Designed for near real-time and scheduled batch runs
 
-Schema validation and safe ingestion using Delta Lake
+---
 
-🔹 Advanced Data Validation & Quality Assurance
+## 📊 Outcome
+This project showcases a **production-ready, event-driven lakehouse pipeline** suitable for real-world e-commerce analytics, with strong focus on data quality, historical accuracy, and business intelligence.
 
-Cross-table validation between staging datasets
+---
 
-Business rule validation (e.g., order totals, customer references, inventory checks)
-
-Data integrity checks with severity-based scoring
-
-Centralized error logging for invalid records
-
-🔹 Data Enrichment & Business Intelligence
-
-Customer segmentation
-
-Product performance analysis
-
-Seasonal and trend-based insights
-
-Customer Lifetime Value (CLV) calculation
-
-Analytics-ready fact and dimension tables
-
-🔹 SCD Type 2 Implementation
-
-Slowly Changing Dimension (SCD2) logic for:
-
-Customers
-
-Products
-
-Maintains historical records with:
-
-Effective date
-
-Expiry date
-
-Current record indicator
-
-Automated Delta Lake MERGE operations
-
-🔹 Automated File Management
-
-Source file archiving after successful processing
-
-Batch ID tracking for traceability
-
-Processing status monitoring
-
-Error handling and reprocessing support
-
-🔹 Analytics Dashboard Layer
-
-Gold-layer summary tables for:
-
-Real-time KPIs
-
-Customer segment analysis
-
-Product performance tracking
-
-Optimized for BI tools and reporting
-
-🔹 Event-Driven Workflow Orchestration
-
-JSON trigger files initiate batch processing
-
-Sequential execution of Databricks notebooks
-
-End-to-end pipeline monitoring using Databricks Workflows
-
-Failure handling and logging at each stage
-
-📊 Use Cases
-
-Real-time and batch analytics for e-commerce operations
-
-Historical customer and product analysis
-
-Data-driven decision-making for marketing and inventory planning
+## 📁 Repository Structure
 
 
 Project 1 : E-commerce Event-Driven Data Pipeline (Industrial Project) Tech Stack: Databricks, PySpark, Delta Lake, Databricks Volumes, Databricks Workflows, GitHub
