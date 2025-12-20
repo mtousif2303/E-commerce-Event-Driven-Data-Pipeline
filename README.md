@@ -1,13 +1,12 @@
 # E-commerce-Event-Driven-Data-Pipeline
 
-E-commerce Event-Driven Data Pipeline
-📌 Project Overview
+roject Overview
 
-This project demonstrates an industrial-grade, event-driven data pipeline for an e-commerce platform. It is designed to ingest, validate, enrich, and analyze data from multiple business domains using modern lakehouse architecture principles.
+This project implements a production-grade, event-driven data pipeline for an e-commerce platform using Databricks and Delta Lake. The pipeline processes data from multiple business domains, ensures high data quality, maintains historical changes, and delivers analytics-ready datasets for business intelligence.
 
-The pipeline is built to be scalable, fault-tolerant, and production-ready, leveraging Databricks-native services for orchestration, storage, and analytics.
+The solution follows modern data engineering best practices, including schema enforcement, data validation, SCD Type 2 handling, automated orchestration, and monitoring.
 
-🛠️ Tech Stack
+🛠 Tech Stack
 
 Databricks
 
@@ -21,8 +20,18 @@ Databricks Workflows
 
 GitHub
 
-🔄 Key Features & Architecture
-1️⃣ Multi-Source Data Ingestion Pipeline
+🧩 Architecture Highlights
+
+Event-driven ingestion using trigger files
+
+Medallion architecture (Bronze → Silver → Gold)
+
+Delta Lake ACID transactions and schema enforcement
+
+Modular, reusable notebook design
+
+🚀 Key Features
+🔹 Multi-Source Data Ingestion
 
 Ingests data from multiple domains:
 
@@ -36,106 +45,90 @@ Inventory
 
 Shipping
 
-Source data is loaded from Databricks Volumes
+Automated file-based ingestion from Databricks Volumes
 
-Automated file-based ingestion with schema validation
+Schema validation and safe ingestion using Delta Lake
 
-Supports incremental and batch processing
+🔹 Advanced Data Validation & Quality Assurance
 
-2️⃣ Advanced Data Validation & Quality Assurance
+Cross-table validation between staging datasets
 
-Cross-table validation across staging datasets
+Business rule validation (e.g., order totals, customer references, inventory checks)
 
-Business rule validation (null checks, referential integrity, value ranges)
+Data integrity checks with severity-based scoring
 
-Data quality scoring with severity-based classification:
+Centralized error logging for invalid records
 
-Critical
+🔹 Data Enrichment & Business Intelligence
 
-Warning
-
-Informational
-
-Centralized error logging and validation metrics
-
-3️⃣ Data Enrichment & Business Intelligence
-
-Customer segmentation based on purchase behavior
+Customer segmentation
 
 Product performance analysis
 
-Seasonal trend detection
+Seasonal and trend-based insights
 
 Customer Lifetime Value (CLV) calculation
 
-Enriched datasets optimized for analytics and reporting
+Analytics-ready fact and dimension tables
 
-4️⃣ SCD Type 2 (Slowly Changing Dimension)
+🔹 SCD Type 2 Implementation
 
-Implements SCD Type 2 for dimensional tables
+Slowly Changing Dimension (SCD2) logic for:
 
-Maintains full historical tracking using:
+Customers
 
-Effective start date
+Products
+
+Maintains historical records with:
+
+Effective date
 
 Expiry date
 
-Active record flag
+Current record indicator
 
-Automated MERGE operations using Delta Lake
+Automated Delta Lake MERGE operations
 
-5️⃣ Automated File Management
+🔹 Automated File Management
 
 Source file archiving after successful processing
 
-Batch-level tracking with unique batch IDs
+Batch ID tracking for traceability
 
-Error file segregation for failed records
+Processing status monitoring
 
-End-to-end processing status monitoring
+Error handling and reprocessing support
 
-6️⃣ Analytics & Reporting Layer
+🔹 Analytics Dashboard Layer
 
-Real-time analytics summary tables
+Gold-layer summary tables for:
 
-Customer segment dashboards
+Real-time KPIs
 
-Product performance KPIs
+Customer segment analysis
 
-Business metrics ready for BI tools
+Product performance tracking
 
-7️⃣ Event-Driven Workflow Orchestration
+Optimized for BI tools and reporting
 
-Pipeline execution triggered using JSON control files
+🔹 Event-Driven Workflow Orchestration
 
-Sequential notebook execution via Databricks Workflows
+JSON trigger files initiate batch processing
 
-End-to-end pipeline monitoring and alerting
+Sequential execution of Databricks notebooks
 
-Designed for near real-time and scheduled batch processing
+End-to-end pipeline monitoring using Databricks Workflows
 
-📊 Outcome
+Failure handling and logging at each stage
 
-This project showcases a production-ready, event-driven lakehouse pipeline suitable for real-world e-commerce analytics, emphasizing data quality, historical accuracy, and business intelligence.
+📊 Use Cases
 
-📁 Repository Structure (Optional)
-├── ingestion/
-├── validation/
-├── enrichment/
-├── scd2/
-├── workflows/
-├── analytics/
-├── utils/
-└── README.md
-🚀 Future Enhancements
+Real-time and batch analytics for e-commerce operations
 
-Streaming ingestion using Auto Loader
+Historical customer and product analysis
 
-Integration with BI tools (Power BI / Tableau)
+Data-driven decision-making for marketing and inventory planning
 
-ML-based customer churn prediction
-
-Data observability and SLA monitoring
 
 Project 1 : E-commerce Event-Driven Data Pipeline (Industrial Project) Tech Stack: Databricks, PySpark, Delta Lake, Databricks Volumes, Databricks Workflows, GitHub
 
